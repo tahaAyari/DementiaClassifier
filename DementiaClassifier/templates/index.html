@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+
+<title>Reusable Form Demo</title>
+        	 	<link rel="stylesheet" media="screen" href="static/bootstrap.min.css">
+        	 	<link rel="stylesheet" href="static/bootstrap-theme.min.css">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<div class="container">
+<h2>Dementia Classification</h2>
+<form action="{{ url_for('predict')}}" method="post" role="form">
+   {{ prediction_text }}
+<div class="form-group">
+      <label> Gender:<input type="float" name="Gender" placeholder="M/F" required="required" /> </label>
+        <label> MMSE:<input type="float" name="mmse" placeholder="mmse" required="required" /></label>
+		<label> Age:<input type="float" name="ageAtEntry" placeholder="Age" required="required" /></label>
+		<label> CDR:<input type="float" name="cdr" placeholder="cdr" required="required" /></label>
+		<label> Community Affairs:<input type="float" name="commun" placeholder="commun" required="required" /> </label>
+		<label> Home Hobbies:<input type="float" name="homehobb" placeholder="home hobbies" required="required" /> </label>
+		<label> Judgment:<input type="float" name="judgment" placeholder="Judgment" required="required" /></label>
+		<label> Memory:<input type="float" name="memory" placeholder="memory" required="required" /></label>
+		<label> Orient: <input type="float" name="orient" placeholder="orient" required="required" /> </label>    
+		<label> Personal care: <input type="float" name="perscare" placeholder="Personal care" required="required" /> </label> 
+		<label> APOE: <input type="float" name="apoe" placeholder="APOE" required="APOE" /> </label> 
+		<label> Sumbox: <input type="float" name="sumbox" placeholder="sumbox" required="Sumbox" /> </label> 
+		<button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+</form>
+
+</body>
+</html>
